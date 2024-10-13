@@ -1,20 +1,6 @@
 import os
-from helper_functions import creation_of_daily_weather_detail_object
-mapping_of_months = {
-    "1": "Jan",
-    "2": "Feb",
-    "3": "Mar",
-    "4": "Apr",
-    "5": "May",
-    "6": "Jun",
-    "7": "Jul",
-    "8": "Aug",
-    "9": "Sep",
-    "10": "Oct",
-    "11": "Nov",
-    "12": "Dec"
-}
-
+from Helper.helper_functions import creation_of_daily_weather_detail_object
+from Helper.helper_functions import mapping_of_months
 
 class WeatherDetailParserModel:
     def __get_weather_details_of_a_month_from_file(self, filename):

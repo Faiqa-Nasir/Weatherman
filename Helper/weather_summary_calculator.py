@@ -92,3 +92,13 @@ class WeatherSummaryCalculator(IWeatherSummaryCalculator):
             "Maximum Humidity : ": highest_humidity_in_month,
             " was recorded on ": day_with_monthly_highest_humidity
         }
+
+    def months_per_day_min_max_temp(self, monthly_weather_info: list):
+        months_max_min_temp = []
+        for daily_weather_details in monthly_weather_info:
+            if daily_weather_details.max_temperature_c is not None or daily_weather_details.min_temperature_c is not None:
+                max_temp = "+" * int(daily_weather_details.max_temperature_c)
+                per_day_max_min_temp = str(daily_weather_details.min_temperature_c)+str(
+                    max_temp)+str(daily_weather_details.max_temperature_c)
+                months_max_min_temp.append(per_day_max_min_temp)
+        return months_max_min_temp
